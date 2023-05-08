@@ -59,10 +59,11 @@ startGame = () => {
     timerInterval = setInterval(() => {
         timeLeft--;
         timeCounter.textContent = `${timeLeft} seconds remaining`;
-        if (timeLeft <= 0) {
+        if (timeLeft <= 0 || availableQuestions.length === 0) {
             clearInterval(timerInterval);
             return;
         }
+        
     }, 1000);
     getNewQuestion();
 };

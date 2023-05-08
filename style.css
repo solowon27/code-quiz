@@ -1,14 +1,12 @@
 :root{
-    --main-bg-color: #978885;
-    --main-text-color: #333333;
-    --main-border-color: #cccccc;
+    --main-bg-color: #003049;
+    --main-border-color: #eeecec;
 }
 *{
     box-sizing: border-box;
 }
 body{
     background-color: var(--main-bg-color);
-    color: var(--main-text-color);
     margin: 0;
     padding: 0;
     font-family: 'monospace';
@@ -27,7 +25,7 @@ body{
     margin: 0 auto;
     padding: 10px;
     font-family: 'monospace';
-    color: rgb(8, 30, 226);
+    color: rgba(245, 236, 236, 0.938);
     border-radius: 5px;
     width: 100vh;
     height: 100vh;

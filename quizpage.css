@@ -20,10 +20,10 @@
     width: 80%;
 }
 .correct{
-    background-color: rgba(0, 255, 0, 0.151);
+    background-color: rgba(0, 255, 0, 0.342);
 }
 .incorrect{
-    background-color: rgba(255, 0, 0, 0.151);
+    background-color: rgba(255, 0, 0, 0.356);
 }
 .live {
     display: block;
@@ -32,6 +32,19 @@
     text-align: center;
     font-size: 20px;
 }
+#question {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 5px;
+    color: rgb(255, 255, 255);
+}
 .red {
     color: red;
+}
+.home {
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: #f3f1ed46;
+    text-decoration: none;
 }
