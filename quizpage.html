@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="quizpage.css">
+  </head>
+  <body>
+   <div class="container">
+    <div class="justify-center flex-column">
+      <h2 id="question">Question</h2>
+      <p id="time">Time-left: </p>
+      <div class="choice-container">
+          <input type="radio" class="choice-prefix" data-number="1"></input>
+          <p class="choice-text" data-number="1">Choice1</p>
+        </div>
+        <div class="choice-container">
+          <input type="radio" class="choice-prefix" data-number="2"></input>
+          <p class="choice-text" data-number="2">Choice2</p>
+        </div>
+        <div class="choice-container">
+          <input type="radio" class="choice-prefix" data-number="3"></input>
+          <p class="choice-text" data-number="3">Choice3</p>
+        </div>
+        <div class="choice-container">
+          <input type="radio" class="choice-prefix" data-number="4"></input>
+          <p class="choice-text" data-number="4">Choice4</p>
+        </div>
+        
+    </div> 
+    <div class="live">
+      <p id="progress">Question</p>
+      <p id="score">Score: </p>
+    </div>
+ </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

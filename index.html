@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz challenge</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Quizpage.css">
+</head>
+<body>
+    <main>
+    <div class="container">
+       
+            <input type="text" placeholder="Enter your name" id="name">
+            <a class="link" href="quizpage.html" id="take-quiz">Take a quiz</a>
+            <a class="link" href="highscore">highscore</a>
+    </div>
+</main>
+<script>
+     const takeQuizButton = document.getElementById("take-quiz");
+     const nameInput = document.getElementById("name");
+
+    takeQuizButton.addEventListener("click", () => {
+        const name = nameInput.value;
+        localStorage.setItem("userName", name);
+        window.location.href = "index.html";
+    });
+    </script>
+</body>
+</html>
