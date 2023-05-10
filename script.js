@@ -92,7 +92,7 @@ function clearRadioButtons() {
 getNewQuestion = () => {
     clearRadioButtons();
         if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-            return timeCounter.textContent = "You have answered all the questions, please save your score";
+            return timeCounter.textContent = "you are done! please save your score";
         }
         questionCounter++;
         progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
@@ -144,9 +144,9 @@ getNewQuestion = () => {
         const userName = getUserName();
         candidate.textContent = "candidate name: " + userName;
         scoreText.textContent ="your current Score: " + score;
-        if(score >75 && score <=100){
+        if(score >=75 && score <=100){
           grade.textContent ="your grade is: 'A'" + AEl + nailedIt;
-        } else if(score >=50 && score <=75){
+        } else if(score >=50 && score <=74){
           grade.textContent = "your grade is:  'B'" + BEl + happyFace;
         } else if(score >=25 && score <=49){
           grade.textContent = "your grade is: 'C'" + CEl + mediumFace;
