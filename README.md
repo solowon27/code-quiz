@@ -1,7 +1,8 @@
 # 04 Web APIs: Quiz game challenge
 # by Solomon Tegegne (solo) with University of Utah Coding Bootcamp
-05-08-2023
+# 05-08-2023
 ## Quiz Game
+
 
 ## Usage 
 To use this game, simply download the files and open the index.html file in your web browser. The game will automatically start when the page loads.
@@ -72,6 +73,8 @@ this quiz app was mad with the help of by James Q Quick a you tuber and copilot 
 
 ## License
 no license required
+## deployed link
+https://solowon27.github.io/code-quiz-web-API-challenge-by-solomon-Tegegne/
 
 ## contribution
 anyone can contribute to this project by making a pull request.
