@@ -6,10 +6,21 @@
     <title>Code Quiz</title>
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="stylesheet" type="text/css" href="quizpage.css">
+    <link rel="stylesheet" href="https://fonts.google.com/specimen/Bruno+Ace+SC"> <!-- bring font-family: 'Bruno Ace SC' from google fonts-->
   </head>
   <body>
    <div class="container">
-    <div class="justify-center flex-column">
+    <div class="result-container">
+      <h2 id="result">Result</h2>
+      <ul>
+        <li id="candidate"></li>
+        <li id="score"></li>
+        <li id="grade"></li>
+      </ul>     
+      <a href="index.html"><button id="home">Home</button></a>
+  </div>
+    <div class="quiz-container">
+      <p id="msg"></p>
       <h2 id="question">Question</h2>
       <p id="time">Time-left: </p>
       <div class="choice-container">
@@ -28,13 +39,12 @@
           <input type="radio" class="choice-prefix" data-number="4"></input>
           <p class="choice-text" data-number="4">Choice4</p>
         </div>
-        
+        <div class="live">
+          <p id="progress">Question</p>
+          <button id="submit">Save</button>
+          <a href="index.html"><button id="home">Back</button></a>
+        </div> 
     </div> 
-    <div class="live">
-      <p id="progress">Question</p>
-      <p id="score">Score: </p>
-      <a href="index.html" class="home">Go back</a>
-    </div>
  </div>
 
     <script src="script.js"></script>

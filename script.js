@@ -1,11 +1,25 @@
 const question = document.getElementById("question");
-const opt1 = Array.from(document.getElementsByClassName("choice-text"));
-const opt2 = Array.from(document.getElementsByClassName("choice-prefix"));
-const choices = [...opt1, ...opt2];
+const selectMethod1 = Array.from(document.getElementsByClassName("choice-text"));
+const selectMethod2 = Array.from(document.getElementsByClassName("choice-prefix"));
+const choices = [...selectMethod1, ...selectMethod2];
+const candidate = document.getElementById("candidate");
 const scoreText = document.getElementById("score");
+const grade = document.getElementById("grade");
 const progressText = document.getElementById("progress");
 const timeCounter = document.getElementById("time");
-const userName = document.getElementById("name");
+const submitBtn = document.getElementById("submit");
+const quizContainer = document.querySelector(".quiz-container");
+const resultContainer = document.querySelector(".result-container");
+const message = document.getElementById("msg");
+
+let AEl = "  Congratulations your nailed it!";
+let BEl = "  Congratulations you pass the exam!";
+let CEl = "  you need study more";
+let DEl = "  Sorry you failed the exam";
+let sadFace = "\u{1F622}";
+let happyFace = "\uD83D\uDE00";
+let mediumFace = "\uD83D\uDE10";
+let nailedIt = "\u{1F525}";
 
 
 let currentQuestion = {};
@@ -55,18 +69,19 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
-    timeLeft = 60;
+    timeLeft = 30;
     timerInterval = setInterval(() => {
         timeLeft--;
         timeCounter.textContent = `${timeLeft} seconds remaining`;
-        if (timeLeft <= 0 || availableQuestions.length === 0) {
+        if (timeLeft <= 0 || availableQuestions.length === 0) { // End the game if the timer reaches 0 or there are no more questions it seems redundant to check for availableQuestions.length === 0 here since it's already checked in getNewQuestion()
             clearInterval(timerInterval);
-            return;
+            return timeCounter.textContent = "Time is up! please save your score";
         }
         
     }, 1000);
     getNewQuestion();
 };
+
 function clearRadioButtons() {
     const radioButtons = document.querySelectorAll('input[type=radio]');
     radioButtons.forEach(radioButton => {
@@ -77,8 +92,7 @@ function clearRadioButtons() {
 getNewQuestion = () => {
     clearRadioButtons();
         if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-            localStorage.setItem('your latest score', score);
-            return window.alert("You have completed the quiz! Your score is " + score + " out of 100!");
+            return;
         }
         questionCounter++;
         progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
@@ -90,7 +104,7 @@ getNewQuestion = () => {
         choices.forEach(choice => {
             const number = choice.dataset["number"];
             choice.innerText = currentQuestion["choice" + number];
-            choice.checked = false; // Uncheck the radio button
+            choice.checked = false; // Uncheck the radio button every time a new question is loaded
         });
     
         availableQuestions.splice(questionIndex, 1);
@@ -121,11 +135,31 @@ getNewQuestion = () => {
                 getNewQuestion();
             }, 1000);
         });
-    });
-    
-    
+    }); 
+    function getUserName() {
+        return window.prompt("Please enter your name:");
+      }
+      submitBtn.addEventListener("click", function(event) {
+        event.preventDefault();
+        const userName = getUserName();
+        candidate.textContent = "candidate name: " + userName;
+        scoreText.textContent ="your current Score: " + score;
+        if(score >=75 && score <=100){
+          grade.textContent ="your grade is: 'A'" + AEl + nailedIt;
+        } else if(score >=50 && score <=74){
+          grade.textContent = "your grade is:  'B'" + BEl + happyFace;
+        } else if(score >=25 && score <=49){
+          grade.textContent = "your grade is: 'C'" + CEl + mediumFace;
+        } else if(score <25){
+          grade.textContent = "your grade is: 'D'" + DEl + sadFace;
+        }
+        quizContainer.style.display = "none"; // Hide the quiz container and show the result container
+        resultContainer.style.display = "block";  
+   
+     });
+      
    incrementScore = num => {
          score += num;
-            scoreText.innerText = 'Your-score: ' + score;
     };
+ 
 startGame();

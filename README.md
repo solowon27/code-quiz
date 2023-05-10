@@ -1,70 +1,80 @@
-# code-quiz-web-API-challenge-by-solomon-Tegegne
-# date: 05-08-2023
+# 04 Web APIs: Quiz game challenge
+# by Solomon Tegegne (solo) with University of Utah Coding Bootcamp
+05-08-2023
+## Quiz Game
 
-Code Quiz
-
-This is a simple quiz game built with HTML, CSS and JavaScript. The game presents the user with a series of multiple-choice questions and awards points for correct answers. The game ends after the user has answered a predetermined number of questions or after a set amount of time has elapsed.
-
-## Usage
+## Usage 
 To use this game, simply download the files and open the index.html file in your web browser. The game will automatically start when the page loads.
 
-## Code
-The JavaScript code for this game is divided into several sections:
+## Description
+This is a simple quiz game built with HTML, CSS and JavaScript. The game presents the user with a series of multiple-choice questions and awards points for correct answers. The game ends after the user has answered a predetermined number of questions or after a set amount of time has elapsed.
 
-1. Variables
-The game starts by declaring several variables:
+## Details
+# Variables and Constants
+question: holds the reference to the HTML element with an ID of "question".
 
-# question: 
-represents the HTML element that displays the current question.
-# opt1 and opt2:
-represent the HTML elements that display the answer choices.
-# choices:
-an array that combines both opt1 and opt2 arrays to represent all answer choices.
-# scoreText: 
-represents the HTML element that displays the user's current score.
-# progressText: 
-represents the HTML element that displays the current question number out of the total number of questions.
-# timeCounter: 
-represents the HTML element that displays the remaining time.
-# userName: 
-represents the HTML element that accepts user name input.
-# currentQuestion: 
-an object that holds the current question and its answer choices.
-# acceptingAnswers: 
-a boolean that controls whether the user can select an answer.
-score: the user's current score.
-# questionCounter: 
-the current question number.
-# availableQuestions: 
-an array that holds the questions that are still available to be asked.
-# questions: 
-an array of objects that represent the quiz questions and their answer choices.
-# SCORE_POINTS: 
-the number of points awarded for each correct answer.
-# MAX_QUESTIONS: 
-the maximum number of questions that can be asked in one game.
-2. Functions
-# #startGame:  
-this function resets all necessary variables to their initial values and starts the game.
-# clearRadioButtons: 
-this function unchecks all radio buttons so that the user can only select one answer per question.
-# getNewQuestion: 
-this function selects a random question from the availableQuestions array and displays it on the screen.
-# incrementScore: 
-this function increases the user's score by a given number of points.
-# timerInterval: 
-this function sets the time interval of the game to be 60 seconds, and each second the time left is reduced by one second. If the time is up, the function clears the time interval.
-# choices.forEach: 
-this function loops through each answer choice and adds an event listener to each one. When an answer choice is selected, the function checks whether the answer is correct or not and adjusts the score accordingly. If the answer is incorrect, 10 seconds is subtracted from the remaining time and the timeCounter element turns red for half a second.
+1. selectMethod1: holds an array of HTML elements with a class of "choice-text". This array is created using Array.from() method, which converts the HTML collection returned by getElementsByClassName() into an array.
+
+2. selectMethod2: holds an array of HTML elements with a class of "choice-prefix". This is also created using Array.from().
+
+3. choices: an array that combines selectMethod1 and selectMethod2 arrays using the spread operator.
+
+4. candidate: holds the reference to the HTML element with an ID of "candidate".
+
+5. scoreText: holds the reference to the HTML element with an ID of "score".
+
+6. grade: holds the reference to the HTML element with an ID of "grade".
+
+7. progressText: holds the reference to the HTML element with an ID of "progress".
+
+8. timeCounter: holds the reference to the HTML element with an ID of "time".
+
+9. submitBtn: holds the reference to the HTML element with an ID of "submit".
+
+10. quizContainer: holds the reference to the HTML element with a class of "quiz-container".
+
+11. resultContainer: holds the reference to the HTML element with a class of "result-container".
+
+12. message: holds the reference to the HTML element with an ID of "msg".
+
+13. AEl, BEl, CEl, DEl: These variables hold the messages that will be displayed based on the user's score.
+
+14. sadFace, happyFace, mediumFace, nailedIt: These variables hold Unicode emojis that will be displayed along with the messages.
+
+15. currentQuestion: holds the object that represents the current question being displayed.
+
+16. acceptingAnswers: a boolean variable that determines whether the user's answer is accepted or not.
+
+17. score: holds the user's current score.
+
+18. questionCounter: holds the number of questions that have been asked so far.
+
+19. availableQuestions: holds an array of questions that are still available to be asked.
+
+20. questions: an array of objects that represent the questions, choices, and the correct answers.
+
+21. SCORE_POINTS: a constant that holds the score that the user will earn for each correct answer.
+
+22. MAX_QUESTIONS: a constant that holds the maximum number of questions that the user will answer in one game.
+
+# Functions
+
+1. startGame(): a function that initializes the game. It sets the initial values of questionCounter, score, and availableQuestions, and starts the timer.
+2. clearRadioButtons(): a function that clears all the radio buttons that represent the user's choices after each question.
+3. getNewQuestion(): a function that gets a new question from the availableQuestions array, displays it, and sets acceptingAnswers to true.
+An anonymous function that is attached to each choice using the forEach() method. This function handles the user's selection and determines whether the answer is correct or incorrect.
+4. getUserName(): a function that prompts the user to enter their name and returns it.
+Event Listeners
+5. An event listener that is attached to the submit button. It prevents the default behavior of the form, prompts the user to enter their name, and displays the user's name, score, and grade.
 
 ## Credits
-this quiz app was first built by James Q Quick a you tuber and I have modified it to my own version, with a better UI and timer method and also along with the acceptance criteria for the challenge.
+this quiz app was mad with the help of by James Q Quick a you tuber and copilot suggestion and built it to my own version, with a better UI and timer method and also along with the acceptance criteria for the challenge.
 
-## License
+License
 no license required
 
-## contribution
+contribution
 anyone can contribute to this project by forking it and making a pull request.
 
-## contact
+contact
 for any questions or comments please contact me through solowon27@hotmail.com
