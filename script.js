@@ -92,7 +92,7 @@ function clearRadioButtons() {
 getNewQuestion = () => {
     clearRadioButtons();
         if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
-            return;
+            return timeCounter.textContent = "You have answered all the questions, please save your score";
         }
         questionCounter++;
         progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`;
