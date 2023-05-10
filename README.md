@@ -70,11 +70,13 @@ Event Listeners
 ## Credits
 this quiz app was mad with the help of by James Q Quick a you tuber and copilot suggestion and built it to my own version, with a better UI and timer method and also along with the acceptance criteria for the challenge.
 
-License
+## License
 no license required
 
-contribution
-anyone can contribute to this project by forking it and making a pull request.
+## contribution
+anyone can contribute to this project by making a pull request.
 
-contact
+## contact
 for any questions or comments please contact me through solowon27@hotmail.com
+
+2023 Solomon Tegegne (solo)
