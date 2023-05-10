@@ -144,9 +144,9 @@ getNewQuestion = () => {
         const userName = getUserName();
         candidate.textContent = "candidate name: " + userName;
         scoreText.textContent ="your current Score: " + score;
-        if(score >=75 && score <=100){
+        if(score >75 && score <=100){
           grade.textContent ="your grade is: 'A'" + AEl + nailedIt;
-        } else if(score >=50 && score <=74){
+        } else if(score >=50 && score <=75){
           grade.textContent = "your grade is:  'B'" + BEl + happyFace;
         } else if(score >=25 && score <=49){
           grade.textContent = "your grade is: 'C'" + CEl + mediumFace;
