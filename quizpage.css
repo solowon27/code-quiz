@@ -107,7 +107,12 @@ span {
     margin-bottom: 5px;
     color: rgb(79, 236, 5);
 }
-#result{
+.result{
+    justify-content: center;
+    width: 400px;
+    
+}
+#result-header{
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -117,4 +122,22 @@ span {
 }
 ul li{
     list-style: circle;
+}
+.close-btn{
+    position: relative;
+    width: 400px;
+    height: 200px;
+    border: 1px solid var(--main-border-color);
+}
+.close-btn .danger {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #dc3545;
+    color: white;
 }

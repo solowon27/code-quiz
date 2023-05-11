@@ -1,11 +1,11 @@
 const question = document.getElementById("question");
-const selectMethod1 = Array.from(document.getElementsByClassName("choice-text"));
-const selectMethod2 = Array.from(document.getElementsByClassName("choice-prefix"));
-const choices = [...selectMethod1, ...selectMethod2];
+const selectMethod1 = Array.from(document.getElementsByClassName("choice-text")); // Select all elements with the class of choice-text and convert the HTMLCollection to an array
+const selectMethod2 = Array.from(document.getElementsByClassName("choice-prefix"));// Select all elements with the class of choice-prefix and convert the HTMLCollection to an array
+const choices = [...selectMethod1, ...selectMethod2]; // Spread array to create a new array of choices for the functionality of both the radio buttons and the labels
 const candidate = document.getElementById("candidate");
 const scoreText = document.getElementById("score");
 const grade = document.getElementById("grade");
-const progressText = document.getElementById("progress");
+const progressText = document.getElementById("progress"); // Progress text means the question place in the quiz
 const timeCounter = document.getElementById("time");
 const submitBtn = document.getElementById("submit");
 const quizContainer = document.querySelector(".quiz-container");
@@ -22,7 +22,7 @@ let happyFace = "\uD83D\uDE00";
 let mediumFace = "\uD83D\uDE10";
 let nailedIt = "\u{1F525}";
 
-//quizGame variables /also global variables
+//quizGame function variables /also global variables
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -74,9 +74,8 @@ quizGame = () => {
     timerInterval = setInterval(() => {
         timeLeft--;
         timeCounter.textContent = `${timeLeft} seconds remaining`;
-        if (timeLeft <= 0 || availableQuestions.length === 0) { // End the game if the timer reaches 0 or there are no more questions it seems redundant to check for availableQuestions.length === 0 here since it's already checked in getNewQuestion()
-            clearInterval(timerInterval);
-            return timeCounter.textContent = "Time is up! please save your score";
+        if (timeLeft <= 0) { // End the game if the timer reaches 0 or there are no more questions it seems redundant to check for availableQuestions.length === 0 here since it's already checked in getNewQuestion()       
+            return stopNewQuestion();
         }
         
     }, 1000);
@@ -89,18 +88,25 @@ function clearRadioButtons() {
       radioButton.checked = false;  // Uncheck all radio buttons every time a new question is loaded
     });
   }
-
+function stopNewQuestion (){
+    clearInterval(timerInterval);
+    timeCounter.textContent = "time is up! please save your score";
+    choices.forEach(choice => {
+        choice.style.display = 'none'; // Disable all choices when the timer reaches 0 i know it is not the best way to do it but it works for now
+    });
+};
 getNewQuestion = () => {
     clearRadioButtons();
         if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) { // End the game if there are no more questions or the question counter exceeds the max number of questions
+            clearInterval(timerInterval);
             return timeCounter.textContent = "you are done! please save your score";
         }
         questionCounter++;
         progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`; // Update the progress text means the question place in the quiz
         const questionIndex = Math.floor(Math.random() * availableQuestions.length); // Get a random question from the available questions
         
-        currentQuestion = availableQuestions[questionIndex];
-        question.innerText = currentQuestion.question;
+        currentQuestion = availableQuestions[questionIndex]; // Set the current question to the random question we just got
+        question.innerText = currentQuestion.question; // Set the question text to the current question
     
         choices.forEach(choice => {
             const number = choice.dataset["number"]; // Get the number of the choice using the data-number attribute that we set in the quizpage.html
@@ -140,7 +146,7 @@ getNewQuestion = () => {
     function getUserName() {
         return window.prompt("Please enter your name:");
       }
-      submitBtn.addEventListener("click", function(event) {
+      submitBtn.addEventListener("click", function(event) { //an event listener for the save button
         event.preventDefault();
         const userName = getUserName();
         candidate.textContent = "candidate name: " + userName;

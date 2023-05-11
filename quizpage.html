@@ -11,13 +11,18 @@
   <body>
    <div class="container">
     <div class="result-container">
-      <h2 id="result">Result</h2>
-      <ul>
-        <li id="candidate"></li>
-        <li id="score"></li>
-        <li id="grade"></li>
-      </ul>     
-      <a href="index.html"><button id="home">Home</button></a>
+      <div class="close-btn">        
+        <a href="index.html"><button class="close-btn danger">X</button></a>
+        <div class="result">
+        <h2 id="result-header">Result</h2>
+        <ul id="ref">
+          <li id="candidate"></li>
+          <li id="score"></li>
+          <li id="grade"></li>
+        </ul> 
+      </div>    
+    </div>        
+      <a href="quizpage.html"><button id="home">Re-take</button></a>
   </div>
     <div class="quiz-container">
       <p id="msg"></p>
