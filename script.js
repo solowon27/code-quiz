@@ -93,6 +93,7 @@ function stopNewQuestion (){
     timeCounter.textContent = "time is up! please save your score";
     choices.forEach(choice => {
         choice.style.display = 'none'; // Disable all choices when the timer reaches 0 i know it is not the best way to do it but it works for now
+        question.style.display = 'none'; // Disable the question when the timer reaches 0
     });
 };
 getNewQuestion = () => {
