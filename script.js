@@ -1,7 +1,7 @@
 const question = document.getElementById("question");
 const selectMethod1 = Array.from(document.getElementsByClassName("choice-text")); // Select all elements with the class of choice-text and convert the HTMLCollection to an array
 const selectMethod2 = Array.from(document.getElementsByClassName("choice-prefix"));// Select all elements with the class of choice-prefix and convert the HTMLCollection to an array
-const choices = [...selectMethod1, ...selectMethod2]; // Spread array to create a new array of choices for the functionality of both the radio buttons and the labels
+const choices = [...selectMethod1, ...selectMethod2]; // Spread array to create a new array for the choices for the functionality of both the radio buttons and the labels
 const candidate = document.getElementById("candidate");
 const scoreText = document.getElementById("score");
 const grade = document.getElementById("grade");
@@ -28,6 +28,8 @@ let acceptingAnswers = false;
 let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
+
+
 
 let questions = [ // Array of questions
     {
@@ -94,6 +96,7 @@ function stopNewQuestion (){
     choices.forEach(choice => {
         choice.style.display = 'none'; // Disable all choices when the timer reaches 0 i know it is not the best way to do it but it works for now
         question.style.display = 'none'; // Disable the question when the timer reaches 0
+        progressText.style.display = 'none'; // Disable the progress text when the timer reaches 0
     });
 };
 getNewQuestion = () => {
@@ -144,17 +147,20 @@ getNewQuestion = () => {
             }, 1000);
         });
     }); 
-    function getUserName() {
+    function getCandidateName() {
         return window.prompt("Please enter your name:");
       }
       submitBtn.addEventListener("click", function(event) { //an event listener for the save button
         event.preventDefault();
-        const userName = getUserName();
-        candidate.textContent = "candidate name: " + userName;
+        const candidateName = getCandidateName();
+        
+        candidate.textContent = "candidate name: " + candidateName; // Display the user name in the result container
         scoreText.textContent ="your current Score: " + score;
-        if(score >=75 && score <=100){ // Check the score and display the appropriate grade and face reaction
+        localStorage.setItem("candidateName", candidateName); // this line and the next one Save the user name and score to local storage for testing purposes
+        localStorage.setItem("score", score);
+        if(score >75 && score <=100){ // Check the score and display the appropriate grade and face reaction
           grade.textContent ="your grade is: 'A'" + AEl + nailedIt;
-        } else if(score >=50 && score <=74){
+        } else if(score >=50 && score <=75){
           grade.textContent = "your grade is:  'B'" + BEl + happyFace;
         } else if(score >=25 && score <=49){
           grade.textContent = "your grade is: 'C'" + CEl + mediumFace;

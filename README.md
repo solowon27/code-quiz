@@ -1,11 +1,9 @@
 # 04 Web APIs: Quiz game challenge
 # by Solomon Tegegne (solo) with University of Utah Coding Bootcamp
-# 05-08-2023
+# 05-08-2023, Utah, USA
 ## Quiz Game
-
-
 ## Usage 
-To use this game, simply download the files and open the index.html file in your web browser. The game will automatically start when the page loads.
+To use this quiz game, simply click the "Start Quiz" button. You will be presented with a series of multiple-choice questions. Select the answer that you think is correct. If you are correct, you will earn 25 points. If you are incorrect, you will lose 10 seconds from the timer. The game ends when you have answered all the questions or when the timer reaches 0. You will be prompted to enter your name and your score will be displayed along with your grade.
 
 ## Description
 This is a simple quiz game built with HTML, CSS and JavaScript. The game presents the user with a series of multiple-choice questions and awards points for correct answers. The game ends after the user has answered a predetermined number of questions or after a set amount of time has elapsed.
@@ -64,7 +62,7 @@ question: holds the reference to the HTML element with an ID of "question".
 2. clearRadioButtons(): a function that clears all the radio buttons that represent the user's choices after each question.
 3. getNewQuestion(): a function that gets a new question from the availableQuestions array, displays it, and sets acceptingAnswers to true.
 An anonymous function that is attached to each choice using the forEach() method. This function handles the user's selection and determines whether the answer is correct or incorrect.
-4. getUserName(): a function that prompts the user to enter their name and returns it.
+4. getCandidateName(): a function that prompts the user to enter their name and returns it.
 Event Listeners
 5. An event listener that is attached to the submit button. It prevents the default behavior of the form, prompts the user to enter their name, and displays the user's name, score, and grade.
 
@@ -81,5 +79,5 @@ anyone can contribute to this project by making a pull request.
 
 ## contact
 for any questions or comments please contact me through solowon27@hotmail.com
-
+Thank you!
 2023 Solomon Tegegne (solo)
