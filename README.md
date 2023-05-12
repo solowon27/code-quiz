@@ -67,7 +67,7 @@ Event Listeners
 5. An event listener that is attached to the submit button. It prevents the default behavior of the form, prompts the user to enter their name, and displays the user's name, score, and grade.
 
 ## Credits
-this quiz app was mad with the help of by James Q Quick a you tuber and copilot suggestion and built it to my own version, with a better UI and timer method and also along with the acceptance criteria for the challenge.
+this quiz app was mad with the help of by James Q Quick a you tuber @ https://www.youtube.com/watch?v=rFWbAj40JrQ&list=PLB6wlEeCDJ5Yyh6P2N6Q_9JijB6v4UejF and i built it to my own version, with a better UI and timer method and also along with the acceptance criteria for the challenge.
 
 ## License
 no license required
