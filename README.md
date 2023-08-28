@@ -72,7 +72,7 @@ this quiz app was mad with the help of by James Q Quick a you tuber @ https://ww
 ## License
 no license required
 ## deployed link
-https://solowon27.github.io/code-quiz-web-API-challenge-by-solomon-Tegegne/
+https://solowon27.github.io/code-quiz/
 
 ## contribution
 anyone can contribute to this project by making a pull request.
